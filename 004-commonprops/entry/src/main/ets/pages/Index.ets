@@ -86,6 +86,92 @@ struct Index {
           // 说明：
           // 该接口只适用于组件布局区域超出或离开了当前屏幕显示区域的情况，不支持组件堆叠（Stack）导致的面积不可见、使用offset或translate等图形变换接口导致的面积超出情况。
           .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => { console.log('onVisibleAreaChange') })
+
+        /**
+         * 通用属性
+         * https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V2/3_2_u901a_u7528_u5c5e_u6027-0000001427902428-V2
+         */
+        // 尺寸相关属性
+        // min: api 7
+        Stack()
+          // 设置组件自身的宽度，缺省时使用元素自身内容需要的宽度。若子组件的宽大于父组件的宽，则会画出父组件的范围。
+          // 单位：vp
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .width(50)
+          // 设置组件自身的高度，缺省时使用元素自身内容需要的高度。若子组件的高大于父组件的高，则会画出父组件的范围。
+          // 单位：vp
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .height(50)
+          // 与上面两个等价
+          // .size({
+          //   width: 50,
+          //   height: 50
+          // })
+          // 设置内边距属性。
+          // 参数为Length类型时，四个方向内边距同时生效。
+          // 默认值：0
+          // 单位：vp
+          // padding设置百分比时，上下左右内边距均以父容器的width作为基础值。
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .padding(0)
+          // 设置外边距属性。
+          // 参数为Length类型时，四个方向外边距同时生效。
+          // 默认值：0
+          // 单位：vp
+          // margin设置百分比时，上下左右外边距均以父容器的width作为基础值。
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .margin(0)
+          // 父容器尺寸确定时，设置了layoutWeight属性的子元素与兄弟元素占主轴尺寸按照权重进行分配，忽略元素本身尺寸设置，表示自适应占满剩余空间。
+          // 默认值：0
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          // 说明：
+          // 仅在Row/Column/Flex布局中生效。
+          // 可选值为大于等于0的数字，或者可以转换为数字的字符串。
+          .layoutWeight(0)
+          // 设置约束尺寸，组件布局时，进行尺寸范围限制。constraintSize的优先级高于Width和Height。若设置的minWidth大于maxWidth，则minWidth生效，minHeight与maxHeight同理。
+          // 默认值：
+          // {
+          //   minWidth: 0,
+          //   maxWidth: Infinity,
+          //   minHeight: 0,
+          //   maxHeight: Infinity
+          // }
+          .constraintSize({
+            minWidth: 0,
+            maxWidth: Infinity,
+            minHeight: 0,
+            maxHeight: Infinity
+          })
+
+        // 位置相关属性
+        // min: api 7
+        Stack()
+          // 设置容器元素绘制区域内的子元素的对齐方式。
+          // 默认值：Alignment.Center
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .align(Alignment.Center)
+          // 设置容器元素内主轴方向上的布局。
+          // 默认值：Direction.Auto
+          // 从API version 9开始，该接口支持在ArkTS卡片中使用。
+          .direction(Direction.Auto)
+          // 绝对定位，设置子元素左上角相对于父容器左上角偏移位置。
+          // 在布局容器中，设置该属性不影响父容器布局，仅在绘制时进行位置调整。
+          // 适用于置顶显示、悬浮按钮等组件在父容器中位置固定的场景。
+          .position({
+            x: 0,
+            y: 0,
+          })
+          // 相对定位，设置子素相对于自身的额外偏移量。设置该属性，不影响父容器布局，仅在绘制时进行位置调整。
+          // 默认值：
+          // {
+          //   x: 0,
+          //   y: 0
+          // }
+          .offset({
+            x: 0,
+            y: 0
+          })
+
       }
       .width('100%')
     }
