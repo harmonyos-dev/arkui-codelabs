@@ -153,6 +153,7 @@ struct Index {
         }
           .width(100)
 
+        // 步骤导航器组件，适用于引导用户按照步骤完成任务的导航场景。
         // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V2/ts-basic-components-stepper-0000001478341145-V2#ZH-CN_TOPIC_0000001574128481__示例
         // Stepper({
         //   index: 0,
