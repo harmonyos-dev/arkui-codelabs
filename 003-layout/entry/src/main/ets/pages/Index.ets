@@ -111,7 +111,7 @@ struct Index {
           ListItem() {
             Text(`${item}`)
               .fontSize(50)
-              //.height(100) // 注意！！！！内容必须显式设置高度，否则滚动不了！！！
+              //.height(100) // 注意！！！！列表没设置高度内容必须显式设置高度，否则滚动不了！！！
               .fontWeight(FontWeight.Bold)
               .fontColor(['red', 'green', 'blue'][item % 3])
               .padding({ left: '10', right: '10' })
