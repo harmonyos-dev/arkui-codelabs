@@ -2,11 +2,17 @@
 @Component
 struct Index {
   // @State 组件内部响应式状态
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-state-0000001474017162-V2
   @State message: string = 'Hello World'
   @State count: number = 0
-
   @State autoCounter: number = 1;
 
+  // @Provide 修饰的属性为下层组件提供的值
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-provide-and-consume-0000001473857338-V2
+  @Provide aProvidedValue: string = '这是上层组件提供的值'
+
+  // 组件生命周期：挂载
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-page-custom-components-lifecycle-0000001524296665-V2
   aboutToAppear() {
     // 通过 setInterval 来模拟异步请求
     setInterval(() => {
@@ -53,10 +59,16 @@ struct Index {
 @Component
 struct CustomButton {
   // @Prop 修饰的属性为从父组件到子组件的单向数据绑定
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-prop-0000001473537702-V2
   @Prop text: number
 
   // @Link 修饰的属性为父组件与子组件到的双向数据绑定，父组件需传入需要绑定的状态的引用
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-link-0000001524297305-V2
   @Link count: number
+
+  // @Consume 使用上层提供的值
+  // See: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/arkts-provide-and-consume-0000001473857338-V2
+  @Consume aProvidedValue: string
 
   // 指定为 private 的属性依然能从外部传入
   // 比如:
@@ -70,6 +82,11 @@ struct CustomButton {
     Column() {
       Text('父组件Count: ' + this.count.toString())
         .fontSize(50)
+        .fontWeight(FontWeight.Bold)
+
+      Text(this.aProvidedValue)
+        .fontSize(30)
+        .fontColor('green')
         .fontWeight(FontWeight.Bold)
 
       Button('父组件Count++')
