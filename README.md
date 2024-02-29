@@ -1,6 +1,6 @@
 # arkUI-codelabs
 ArkUI （方舟开发框架）codelabs，<i>HarmonyOS 和 OpenHarmony 通用</i>
-- HarmonyOS 平台能力，请转到 [openharmony-codelabs](https://github.com/harmonyos-dev/harmonyos-codelabs)
+- HarmonyOS 平台能力，请转到 [harmonyos-codelabs](https://github.com/harmonyos-dev/harmonyos-codelabs)
 - OpenHarmony 平台能力，请转到 [openharmony-codelabs](https://github.com/harmonyos-dev/openharmony-codelabs)
 
 目录
