@@ -1,7 +1,9 @@
 # arkUI-codelabs
+ArkUI （方舟开发框架）codelabs，<i>HarmonyOS 和 OpenHarmony 通用</i>
+- HarmonyOS 平台能力，请转到 [openharmony-codelabs](https://github.com/harmonyos-dev/harmonyos-codelabs)
+- OpenHarmony 平台能力，请转到 [openharmony-codelabs](https://github.com/harmonyos-dev/openharmony-codelabs)
 
-ArkUI （方舟开发框架） 示例项目 + 注释
-
+目录
 - [x] 001 项目结构及其目录含义
 - [x] 002 基本响应式，点击事件监听
 - [x] 003 布局
